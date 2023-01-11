@@ -5,7 +5,6 @@ list(APPEND WebKit_SOURCES
     NetworkProcess/haiku/NetworkProcessMainHaiku.cpp
     NetworkProcess/haiku/RemoteNetworkingContextHaiku.cpp
 
-    Platform/IPC/unix/AttachmentUnix.cpp
     Platform/IPC/unix/ConnectionUnix.cpp
     Platform/haiku/LoggingHaiku.cpp
     Platform/haiku/ModuleHaiku.cpp
@@ -33,10 +32,6 @@ list(APPEND WebKit_SOURCES
     WebProcess/InjectedBundle/haiku/InjectedBundleHaiku.cpp
     WebProcess/InjectedBundle/haiku/InjectedBundleHaiku.cpp
     WebProcess/WebCoreSupport/haiku/WebFrameNetworkingContext.cpp
-    WebProcess/WebPage/AcceleratedDrawingArea.cpp
-    WebProcess/WebPage/CoordinatedGraphics/CoordinatedLayerTreeHost.cpp
-    WebProcess/WebPage/DrawingAreaImpl.cpp
-    WebProcess/WebPage/LayerTreeHost.cpp
     WebProcess/WebPage/haiku/WebInspectorHaiku.cpp
     WebProcess/WebPage/haiku/WebPageHaiku.cpp
     WebProcess/haiku/WebProcessHaiku.cpp
@@ -135,7 +130,3 @@ set(WebKit_FORWARDING_HEADERS_FILES
     #Platform/classifier/ResourceLoadStatisticsClassifier.h
     Platform/IPC/unix/UnixMessage.h
 )
-
-#WEBKIT_CREATE_FORWARDING_HEADERS(WebKit FILES ${WebKit_FORWARDING_HEADERS_FILES} DIRECTORIES 
-#${WebKit_FORWARDING_HEADERS_DIRECTORIES})
-
