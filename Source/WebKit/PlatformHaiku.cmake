@@ -88,6 +88,8 @@ list(APPEND WebKit_LIBRARIES
     ${SQLITE_LIBRARIES}
 )
 
+message(STATUS "KWA: WebKit_LIBRARIES at this point: ${WebKit_LIBRARIES}")
+
 list(APPEND WebProcess_SOURCES
     WebProcess/EntryPoint/unix/WebProcessMain.cpp
 )
