@@ -80,9 +80,13 @@ static ApplicationMemoryStats sampleMemoryAllocatedForApplication()
 String WebMemorySampler::processName() const
 {
     team_info info;
-    if (get_team_info(B_CURRENT_TEAM, &info) == B_OK)
-        return String(info.args);
-    return String();
+    if (get_team_info(B_CURRENT_TEAM, &info) == B_OK) {
+        // team_info::args does not appear to be guaranteed to be null terminated.
+        return String::fromUTF8(
+            info.args, strnlen(info.args, sizeof(info.args)));
+    } else {
+        return {};
+    }
 }
 
 WebMemoryStatistics WebMemorySampler::sampleWebKit() const
